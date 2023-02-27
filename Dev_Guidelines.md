@@ -11,6 +11,12 @@
 * Use two spaces for indentation. 
 * Use UTF-8 for encoding. 
 
+# Versions
+* Stable version will be tagged and released.
+* Branches are Work In Progress. 
+* A dedicated branch should be use for each development flow or significant change. 
+
+
 
 
 
@@ -20,4 +26,4 @@
 
 
 # License
-* Please use GPL v2.0+ or compatible licences. 
+* Please use GPL v2. 
