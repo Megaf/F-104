@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+	<sim>
+		<description>Lockheed F-104S Starfighter</description>
+		<long-description>
+			Lockheed F-104 Starfighter for the FlightGear Flight Simulator
+		<long-description>
+		<aircraft-version>2023-02-27-16</aircraft-version>
+
+		<rating>
+			<FDM type="int">1</FDM>
+			<systems type="int">1</systems>
+			<cockpit type="int">1</cockpit>
+			<model type="int">1</model>
+		</rating>
+
+		<authors>
+			<author n="0">
+				<name>RAF1</name>
+				<description>3D Model, Research</description>
+				<nick>RAF1</nick>
+			</author>
+
+			<author n="1">
+				<name>Megaf</name>
+				<description>Project Leader, Q/A, Graphics</description>
+				<nick>Megaf</nick>
+			</author>
+		</authors>
+
+		<maintainers>
+			<maintainer n="0">
+				<name>Megaf</name>
+				<email>mmegaf@gmail.com</email>
+			</maintainer>
+		</maintainers>
+
+		<primary-set type="bool">true</primary-set>
+		<variant-of>F-104</variant-of>
+
+		<tags>
+			<tag n="0">Lockheed</tag>
+			<tag n="1">F-104</tag>
+			<tag n="2">Jet</tag>
+			<tag n="3">Fighter</tag>
+			<tag n="4">Turbojet</tag>
+			<tag n="5">Military</tag>
+		</tags>
+
+		<urls>
+			<home-page>https://forum.flightgear.org/viewtopic.php?f=4&t=41282</home-page>
+			<support>https://github.com/Megaf/F-104/discussions/categories/support</support>
+			<wikipedia>https://en.wikipedia.org/wiki/Aeritalia_F-104S_Starfighter</wikipedia>
+			<code-repository>https://github.com/Megaf/F-104/</code-repository>
+		</urls>
+
+		<flight-model>jsb</flight-model>
+
+<!-- TODO --
+https://wiki.flightgear.org/Aircraft-set.xml
+
+		<previews></previews>
+		<startup></startup>
+		<model></model>
+		<sound></sound>
+		<panel></panel>
+		<autopilot></autopilot>
+		<icao></icao>
+		<performance></performance>
+		
+
+-->
+	</sim>
+</PropertyList>
