@@ -20,4 +20,4 @@
 
 
 # License
-* Please use GPL v3.0 or compatible licences. 
+* Please use GPL v2.0+ or compatible licences. 
