@@ -283,7 +283,7 @@
  <system file="flaps"/>
  <system file="gear"/>
  <system file="NWS"/>
- <system file="radar"/>
+ <!--<system file="radar"/>-->
  <system file="speedbrakes"/>
  <system file="tailhook"/>
 

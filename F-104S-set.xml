@@ -60,7 +60,8 @@
 			<code-repository>https://github.com/Megaf/F-104/</code-repository>
 		</urls>
 
-		<flight-model>null</flight-model>
+		<flight-model>jsb</flight-model>
+		<aero>F-104S</aero>
 
 		<model>
 			<path>Models/F-104S.xml</path>
