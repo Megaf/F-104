@@ -2,10 +2,16 @@
 
 <PropertyList>
 	<sim>
-		<description>Lockheed F-104S Starfighter</description>
+		<description>Aeritalia F-104S Starfighter</description>
 		<long-description>
-			Lockheed F-104 Starfighter for the FlightGear Flight Simulator
-		<long-description>
+			Aeritalia F-104 Starfighter for the FlightGear Flight Simulator.
+			The Aeritalia F-104S Starfighter was a licensed production Italian version
+			of the Lockheed F-104 Starfighter, which served in the Italian Air Force, 
+			and was its mainstay from the late 1960s until the beginning of the 
+			21st century. The F-104S also served in the Turkish Air Force until 
+			the mid-1990s. 
+			The F-104S was the final development of the Starfighter line.
+		</long-description>
 		<aircraft-version>2023-02-27-16</aircraft-version>
 
 		<rating>
@@ -37,7 +43,6 @@
 		</maintainers>
 
 		<primary-set type="bool">true</primary-set>
-		<variant-of>F-104</variant-of>
 
 		<tags>
 			<tag n="0">Lockheed</tag>
@@ -49,27 +54,17 @@
 		</tags>
 
 		<urls>
-			<home-page>https://forum.flightgear.org/viewtopic.php?f=4&t=41282</home-page>
+			<home-page>https://forum.flightgear.org/viewtopic.php?f=4&amp;t=41282</home-page>
 			<support>https://github.com/Megaf/F-104/discussions/categories/support</support>
 			<wikipedia>https://en.wikipedia.org/wiki/Aeritalia_F-104S_Starfighter</wikipedia>
 			<code-repository>https://github.com/Megaf/F-104/</code-repository>
 		</urls>
 
-		<flight-model>jsb</flight-model>
+		<flight-model>null</flight-model>
 
-<!-- TODO --
-https://wiki.flightgear.org/Aircraft-set.xml
+		<model>
+			<path>Models/F-104S.xml</path>
+		</model>
 
-		<previews></previews>
-		<startup></startup>
-		<model></model>
-		<sound></sound>
-		<panel></panel>
-		<autopilot></autopilot>
-		<icao></icao>
-		<performance></performance>
-		
-
--->
 	</sim>
 </PropertyList>
