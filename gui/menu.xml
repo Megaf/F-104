@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <menu n="128">
+    <label>F-104</label>
+    <enabled type="bool">true</enabled>
+    <item>
+      <label>Engine Control</label>
+      <binding>
+        <command>dialog-show</command>
+        <dialog-name>enginestart</dialog-name>
+      </binding>
+    </item>
+  </menu>
+</PropertyList>
