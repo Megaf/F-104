@@ -5,6 +5,8 @@
   <modal>false</modal>
   <layout>vbox</layout>
 
+  <empty><stretch>true</stretch></empty>
+
   <group>
     <layout>hbox</layout>
 

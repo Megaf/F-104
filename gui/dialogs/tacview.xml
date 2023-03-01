@@ -5,10 +5,37 @@
   <modal>false</modal>
   <layout>vbox</layout>
 
+  <empty><stretch>true</stretch></empty>
+
   <group>
     <layout>hbox</layout>
     <empty><stretch>true</stretch></empty>
-    <text><label>TacView</label></text>
+    <text><label>TacView Status:</label></text>
+    <group>
+      <layout>table</layout>
+      <text>
+        <row>0</row>
+        <col>0</col>
+        <visible><property>/sim/tacview-recording</property></visible>
+        <label>Active</label>
+        <color>
+          <red>0.29</red>
+          <green>1</green>
+          <blue>0.29</blue>
+        </color>
+      </text>
+      <text>
+        <row>0</row>
+        <col>0</col>
+        <visible><not><property>/sim/tacview-recording</property></not></visible>
+        <label>Off</label>
+        <color>
+          <red>1</red>
+          <green>0.29</green>
+          <blue>0.29</blue>
+        </color>
+      </text>
+    </group>
     <empty><stretch>true</stretch></empty>
   </group>
 
@@ -57,9 +84,7 @@
       <row>0</row>
       <col>1</col>
       <legend>Stop</legend>
-      <enable>
-        <property>/sim/tacview-recording</property>
-      </enable>
+      <enable><property>/sim/tacview-recording</property></enable>
       <binding>
         <command>property-assign</command>
         <property>/sim/tacview-recording</property>
@@ -71,25 +96,6 @@
         <blue>0.29</blue>
       </color>
     </button>
-  </group>
-
-  <hrule/>
-
-  <group>
-    <layout>hbox</layout>
-    <empty><stretch>true</stretch></empty>
-    <text>
-      <halign>left</halign>
-      <label>TacView Status:</label>
-    </text>
-    <text>
-      <enable>
-        <property>/sim/tacview-recording</property>
-      </enable>
-      <halign>left</halign>
-      <label>Active.</label>
-    </text>
-    <empty><stretch>true</stretch></empty>
   </group>
 
   <hrule/>
