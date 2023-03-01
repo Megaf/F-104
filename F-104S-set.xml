@@ -73,7 +73,7 @@
           <label>F-104</label>
           <enabled type="bool">true</enabled>
           <item>
-            <label>Engine Start</label>
+            <label>Engine Control</label>
             <binding>
               <command>dialog-show</command>
               <dialog-name>enginestart</dialog-name>
@@ -84,4 +84,9 @@
     </menubar>
 
   </sim>
+
+  <input>
+    <keyboard include="keyboard.xml"/>
+  </input>
+
 </PropertyList>

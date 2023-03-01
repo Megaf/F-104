@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <PropertyList>
   <name>enginestart</name>
   <modal>false</modal>
@@ -6,34 +7,23 @@
 
   <group>
     <layout>hbox</layout>
-    <empty><stretch>1</stretch></empty>
+
+    <empty><stretch>true</stretch></empty>
 
     <text>
-      <label>Engine Start</label>
+      <label>Engine Control</label>
     </text>
 
-    <empty>
-      <stretch>1</stretch>
-    </empty>
+    <empty><stretch>true</stretch></empty>
 
-    <button>
-      <pref-width>16</pref-width>
-      <pref-height>16</pref-height>
-      <legend></legend>
-      <default>1</default>
-      <keynum>27</keynum>
-      <border>2</border>
-      <binding>
-        <command>dialog-close</command>
-      </binding>
-      <binding>
-        <command>dialog-apply</command>
-      </binding>
-    </button>
   </group>
+
+  <hrule/>
 
   <group>
     <layout>table</layout>
+    <default-padding>10</default-padding>
+    <!-- Start engine button -->
     <button>
       <row>0</row>
       <col>0</col>
@@ -48,13 +38,41 @@
         <property>/fdm/jsbsim/propulsion/set-running</property>
         <value>0</value>
       </binding>
+
+<!-- TODO
+      <binding>
+        <visible>
+          <less-than>
+            <property>/fdm/jsbsim/propulsion/engine/n2</property>
+            <value type="double">10.0</value>
+          </less-than>
+        </visible>
+        <command>property-assign</command>
+        <property>/sim/screen/yellow</property>
+        <value>Engine Started</value>
+      </binding>
+-->
+
       <color>
         <red>0.29</red>
         <green>1</green>
         <blue>0.29</blue>
       </color>
+
+      <color>
+        <condition>
+          <greater-than>
+            <property>/fdm/jsbsim/propulsion/engine/n2</property>
+            <value type="double">50</value>
+          </greater-than>
+        </condition>
+        <red>1</red>
+        <green>0</green>
+        <blue>0</blue>
+      </color>
     </button>
 
+    <!-- Stop engine button -->
     <button>
       <row>0</row>
       <col>1</col>
@@ -72,28 +90,26 @@
     </button>
   </group>
 
-  <empty>
-    <stretch>1</stretch>
-  </empty>
-
   <hrule/>
 
-<!-- TODO
-Make this work
-Show engine running when running and engine is stopped, when not
+  <group>
+    <layout>table</layout>
+    <default-padding>1</default-padding>
+    <halign>fill</halign>
 
-  <text>
-    <visible>
-      <greater-than>
-        <property>/fdm/jsbsim/propulsion/engine/n2</property>
-        <value>50</value>
-      </greater-than>
-    </visible>
-    <label>Engine is Running</label>
-  <live>true</live>
-  </text>
+    <!-- Close dialog button -->
+    <button>
+      <legend>Close</legend>
+      <keynum>27</keynum>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </button>
+  </group>
 
--->
-  <empty><stretch>1</stretch></empty>
+  <empty><stretch>true</stretch></empty>
 
 </PropertyList>
