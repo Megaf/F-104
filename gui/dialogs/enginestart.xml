@@ -25,6 +25,8 @@
     <default-padding>10</default-padding>
     <!-- Start engine button -->
     <button>
+      <pref-width>90</pref-width>
+      <pref-height>30</pref-height>
       <row>0</row>
       <col>0</col>
       <legend>Start</legend>
@@ -74,6 +76,8 @@
 
     <!-- Stop engine button -->
     <button>
+      <pref-width>90</pref-width>
+      <pref-height>30</pref-height>
       <row>0</row>
       <col>1</col>
       <legend>Stop</legend>
@@ -99,6 +103,8 @@
 
     <!-- Close dialog button -->
     <button>
+      <pref-width>90</pref-width>
+      <pref-height>30</pref-height>
       <legend>Close</legend>
       <keynum>27</keynum>
       <binding>
