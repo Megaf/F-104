@@ -30,6 +30,9 @@
       <row>0</row>
       <col>0</col>
       <legend>Start</legend>
+      <enable>
+        <property>/engines/engine/cutoff</property>
+      </enable>
       <binding>
         <command>property-assign</command>
         <property>/controls/engines/engine/cutoff</property>
@@ -81,6 +84,9 @@
       <row>0</row>
       <col>1</col>
       <legend>Stop</legend>
+      <enable>
+        <not><property>/engines/engine/cutoff</property></not>
+      </enable>
       <binding>
         <command>property-assign</command>
         <property>/controls/engines/engine/cutoff</property>
