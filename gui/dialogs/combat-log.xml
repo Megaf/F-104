@@ -14,6 +14,20 @@
     <empty><stretch>true</stretch></empty>
   </group>
 
+  <group>
+    <layout>hbox</layout>
+    <empty><stretch>true</stretch></empty>
+    <text>
+      <valign>top</valign><label>NOT FUNCTIONAL</label>
+      <color>
+        <red>1</red>
+        <green>0.29</green>
+        <blue>0.29</blue>
+      </color>
+    </text>
+    <empty><stretch>true</stretch></empty>
+  </group>
+
   <hrule/>
 
   <nasal>

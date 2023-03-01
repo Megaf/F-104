@@ -21,7 +21,7 @@
     </item>
 
     <item>
-      <label>Combat Log</label>
+      <label>Combat Log (Not functional)</label>
       <binding>
         <command>dialog-show</command>
         <dialog-name>combatlog</dialog-name>
