@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <key n="68">
+    <name>Shift d</name>
+    <desc>Opens devtest dialog.</desc>
+    <binding>
+      <command>dialog-show</command>
+      <dialog-name>devtest</dialog-name>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property>/sim/screen/green</property>
+      <value>Shift d pressed.</value>
+    </binding>
+  </key>
+</PropertyList>

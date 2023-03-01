@@ -26,17 +26,6 @@
         <value>1</value>
       </binding>
     </button>
-    <button>
-      <row>1</row>
-      <col>0</col>
-      <legend>BLC</legend>
-      <binding>
-        <command>property-toggle</command>
-        <property>/fdm/jsbsim/systems/BLC/active</property>
-        <value>0</value>
-        <value>1</value>
-      </binding>
-    </button>
   </group>
 
   <hrule/>
@@ -57,5 +46,6 @@
       </binding>
     </button>
   </group>
+<empty><stretch>true</stretch></empty>
 </PropertyList>
 
