@@ -12,12 +12,32 @@
 
     <empty><stretch>true</stretch></empty>
 
-    <text>
-      <label>Engine Control</label>
-    </text>
+    <group>
+      <layout>table</layout>
+      <text>
+        <visible><property>/engines/engine/cutoff</property></visible>
+        <row>0</row>
+        <col>0</col>
+        <label>Engine Control</label>
+      </text>
+      <text>
+        <visible><not><property>/engines/engine/cutoff</property></not></visible>
+        <row>0</row>
+        <col>0</col>
+        <label>Engine Control N2%:</label>
+      </text>
+      <text>
+        <visible><not><property>/engines/engine/cutoff</property></not></visible>
+        <row>0</row>
+        <col>1</col>
+        <format>%d</format>
+        <live>true</live>
+        <property>/fdm/jsbsim/propulsion/engine/n2</property>
+      </text>
+      <empty><stretch>true</stretch></empty>
+    </group>
 
     <empty><stretch>true</stretch></empty>
-
   </group>
 
   <hrule/>
