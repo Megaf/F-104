@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <name>combatlog</name>
+  <modal>false</modal>
+  <layout>vbox</layout>
+  <resizable>true</resizable>
+  <empty><stretch>true</stretch></empty>
+
+  <group>
+    <layout>hbox</layout>
+    <empty><stretch>true</stretch></empty>
+    <text><valign>top</valign><label>Combat Log</label></text>
+    <empty><stretch>true</stretch></empty>
+  </group>
+
+  <hrule/>
+
+  <nasal>
+    <open>
+      <![CDATA[
+        setprop("sim/gui/dialogs/flightlog/buffer", "Click refresh to see the combat event log..");
+      ]]>
+    </open>
+    <close>
+      <![CDATA[
+        setprop("sim/gui/dialogs/flightlog/buffer", "");
+      ]]>
+    </close>
+  </nasal>
+
+  <group>
+    <layout>table</layout>
+    <default-padding>10</default-padding>
+    <button>
+      <pref-width>90</pref-width>
+      <pref-height>30</pref-height>
+      <row>0</row>
+      <col>0</col>
+      <legend>Update</legend>
+      <binding>
+        <command>nasal</command>
+        <script>
+          <![CDATA[
+            var str = "";
+            if (getprop("velocities/groundspeed-kt") < 10 or getprop("sim/crashed") == 1) {
+            var buffer = damage.damageLog.get_buffer();
+
+            foreach(entry; buffer) {
+            str = str~""~entry.time~" "~entry.message~"\n";
+            }
+            } else {
+            str = "The aircraft must be still to read the combat event log.";
+            }
+            setprop("sim/gui/dialogs/flightlog/buffer", str);
+          ]]>
+        </script>
+      </binding>
+      <color>
+        <red>0.29</red>
+        <green>0.29</green>
+        <blue>1</blue>
+      </color>
+    </button>
+  </group>
+
+  <textbox>
+    <!-- Makes window content resizeable. -->
+    <halign>fill</halign>
+    <valign>fill</valign>
+    <stretch>true</stretch>
+
+    <!-- dimensions -->
+    <pref-width>500</pref-width>
+    <pref-height>500</pref-height>
+
+    <property>/sim/gui/dialogs/flightlog/buffer</property>
+    <live>true</live>
+    <slider>15</slider> <!--width for slider -->
+    <wrap>false</wrap> <!-- don't wrap text; default: true -->
+    <top-line>0</top-line> <!-- line to show at top, -ve numbers show last line -->
+    <editable>false</editable> <!-- if the puLargeInput is supposed to be editable -->
+  </textbox>
+
+  <hrule/>
+
+  <group>
+    <layout>table</layout>
+    <default-padding>1</default-padding>
+    <halign>fill</halign>
+
+    <button>
+      <pref-width>90</pref-width>
+      <pref-height>30</pref-height>
+      <legend>Close</legend>
+      <keynum>27</keynum>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </button>
+  </group>
+
+  <empty><stretch>true</stretch></empty>
+
+</PropertyList>

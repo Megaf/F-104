@@ -21,6 +21,14 @@
     </item>
 
     <item>
+      <label>Combat Log</label>
+      <binding>
+        <command>dialog-show</command>
+        <dialog-name>combatlog</dialog-name>
+      </binding>
+    </item>
+
+    <item>
       <label>DevTest Panel</label>
       <binding>
         <command>dialog-show</command>
