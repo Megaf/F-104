@@ -13,10 +13,18 @@
     </item>
 
     <item>
-      <label>TacView</label>
+      <label>TacView Control</label>
       <binding>
         <command>dialog-show</command>
         <dialog-name>tacview</dialog-name>
+      </binding>
+    </item>
+
+    <item>
+      <label>DevTest Panel</label>
+      <binding>
+        <command>dialog-show</command>
+        <dialog-name>devtest</dialog-name>
       </binding>
     </item>
   </menu>

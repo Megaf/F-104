@@ -77,4 +77,10 @@
     <keyboard include="/Input/keyboard.xml"/>
   </input>
 
+  <nasal>
+    <tacview>
+      <file>Aircraft/F-104/Nasal/tacview.nas</file>
+    </tacview>
+  </nasal>
+
 </PropertyList>
