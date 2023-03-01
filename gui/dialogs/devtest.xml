@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <name>devtest</name>
+  <modal>false</modal>
+  <layout>vbox</layout>
+  <group>
+    <layout>hbox</layout>
+    <empty><stretch>true</stretch></empty>
+    <text><label>DevTest Dialog</label></text>
+    <empty><stretch>true</stretch></empty>
+  </group>
+  <hrule/>
+
+  <group>
+    <layout>table</layout>
+    <default-padding>1</default-padding>
+    <button>
+      <row>0</row>
+      <col>0</col>
+      <legend>NWS</legend>
+      <binding>
+        <command>property-toggle</command>
+        <property>/fdm/jsbsim/systems/NWS/engaged</property>
+        <value>0</value>
+        <value>1</value>
+      </binding>
+    </button>
+    <button>
+      <row>1</row>
+      <col>0</col>
+      <legend>BLC</legend>
+      <binding>
+        <command>property-toggle</command>
+        <property>/fdm/jsbsim/systems/BLC/active</property>
+        <value>0</value>
+        <value>1</value>
+      </binding>
+    </button>
+  </group>
+
+  <hrule/>
+  <group>
+    <layout>table</layout>
+    <default-padding>1</default-padding>
+    <halign>fill</halign>
+
+    <!-- Close dialog button -->
+    <button>
+      <legend>Close</legend>
+      <keynum>27</keynum>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </button>
+  </group>
+</PropertyList>
+
