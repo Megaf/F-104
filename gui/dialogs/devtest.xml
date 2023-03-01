@@ -14,7 +14,7 @@
 
   <group>
     <layout>table</layout>
-    <default-padding>1</default-padding>
+    <default-padding>10</default-padding>
     <button>
       <pref-width>90</pref-width>
       <pref-height>30</pref-height>

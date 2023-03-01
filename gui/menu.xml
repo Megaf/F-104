@@ -11,5 +11,13 @@
         <dialog-name>enginestart</dialog-name>
       </binding>
     </item>
+
+    <item>
+      <label>TacView</label>
+      <binding>
+        <command>dialog-show</command>
+        <dialog-name>tacview</dialog-name>
+      </binding>
+    </item>
   </menu>
 </PropertyList>

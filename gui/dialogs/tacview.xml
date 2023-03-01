@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <name>tacview</name>
+  <modal>false</modal>
+  <layout>vbox</layout>
+
+  <group>
+    <layout>hbox</layout>
+    <empty><stretch>true</stretch></empty>
+    <text><label>TacView</label></text>
+    <empty><stretch>true</stretch></empty>
+  </group>
+
+  <hrule/>
+
+  <group>
+    <layout>table</layout>
+    <default-padding>10</default-padding>
+    <button>
+      <pref-width>90</pref-width>
+      <pref-height>30</pref-height>
+      <row>0</row>
+      <col>0</col>
+      <legend>Start</legend>
+      <enable>
+        <not><property>/sim/tacview-recording</property></not>
+      </enable>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/tacview-recording</property>
+        <value>1</value>
+      </binding>
+
+      <color>
+        <red>0.29</red>
+        <green>1</green>
+        <blue>0.29</blue>
+      </color>
+
+      <color>
+        <condition>
+          <greater-than>
+            <property>/sim/tacview-recording</property>
+            <value type="double">50</value>
+          </greater-than>
+        </condition>
+        <red>1</red>
+        <green>0</green>
+        <blue>0</blue>
+      </color>
+    </button>
+
+    <button>
+      <pref-width>90</pref-width>
+      <pref-height>30</pref-height>
+      <row>0</row>
+      <col>1</col>
+      <legend>Stop</legend>
+      <enable>
+        <property>/sim/tacview-recording</property>
+      </enable>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/tacview-recording</property>
+        <value>0</value>
+      </binding>
+      <color>
+        <red>1</red>
+        <green>0.29</green>
+        <blue>0.29</blue>
+      </color>
+    </button>
+  </group>
+
+  <hrule/>
+
+  <group>
+    <layout>hbox</layout>
+    <empty><stretch>true</stretch></empty>
+    <text>
+      <halign>left</halign>
+      <label>TacView Status:</label>
+    </text>
+    <text>
+      <enable>
+        <property>/sim/tacview-recording</property>
+      </enable>
+      <halign>left</halign>
+      <label>Active.</label>
+    </text>
+    <empty><stretch>true</stretch></empty>
+  </group>
+
+  <hrule/>
+
+  <group>
+    <layout>table</layout>
+    <default-padding>1</default-padding>
+    <halign>fill</halign>
+
+    <button>
+      <pref-width>90</pref-width>
+      <pref-height>30</pref-height>
+      <legend>Close</legend>
+      <keynum>27</keynum>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </button>
+  </group>
+
+  <empty><stretch>true</stretch></empty>
+
+</PropertyList>
