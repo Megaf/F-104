@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<PropertyList>
+<PropertyList include="F-104-common.xml">
+	
   <sim>
+	  
     <description>Aeritalia F-104S Starfighter</description>
+		
     <long-description>
       Aeritalia F-104 Starfighter for the FlightGear Flight Simulator.
       The Aeritalia F-104S Starfighter was a licensed production Italian version
@@ -12,7 +15,6 @@
       the mid-1990s. 
       The F-104S was the final development of the Starfighter line.
     </long-description>
-    <aircraft-version>2023-02-27-16</aircraft-version>
 
     <rating>
       <FDM type="int">1</FDM>
@@ -21,44 +23,7 @@
       <model type="int">1</model>
     </rating>
 
-    <authors>
-      <author n="0">
-        <name>RAF1</name>
-        <description>3D Model, Research</description>
-        <nick>RAF1</nick>
-    </author>
-
-      <author n="1">
-        <name>Megaf</name>
-        <description>Project Leader, Q/A, Graphics</description>
-        <nick>Megaf</nick>
-      </author>
-    </authors>
-
-    <maintainers>
-      <maintainer n="0">
-        <name>Megaf</name>
-        <email>mmegaf@gmail.com</email>
-      </maintainer>
-    </maintainers>
-
     <primary-set type="bool">true</primary-set>
-
-    <tags>
-      <tag n="0">Lockheed</tag>
-      <tag n="1">F-104</tag>
-      <tag n="2">Jet</tag>
-      <tag n="3">Fighter</tag>
-      <tag n="4">Turbojet</tag>
-      <tag n="5">Military</tag>
-    </tags>
-
-    <urls>
-      <home-page>https://forum.flightgear.org/viewtopic.php?f=4&amp;t=41282</home-page>
-      <support>https://github.com/Megaf/F-104/discussions/categories/support</support>
-      <wikipedia>https://en.wikipedia.org/wiki/Aeritalia_F-104S_Starfighter</wikipedia>
-      <code-repository>https://github.com/Megaf/F-104/</code-repository>
-    </urls>
 
     <flight-model>jsb</flight-model>
     <aero>F-104S</aero>
@@ -67,20 +32,10 @@
       <path>Models/F-104S.xml</path>
     </model>
 
-    <menubar>
+	<menubar>
       <default include="/gui/menu.xml"/>
-    </menubar>
-
+	</menubar>
+	  
   </sim>
-
-  <input>
-    <keyboard include="/Input/keyboard.xml"/>
-  </input>
-
-  <nasal>
-    <tacview>
-      <file>Aircraft/F-104/Nasal/tacview.nas</file>
-    </tacview>
-  </nasal>
-
+	
 </PropertyList>
