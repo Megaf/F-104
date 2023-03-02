@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList include="F-104-common.xml">
-	
+
   <sim>
-	  
+
     <description>Aeritalia F-104S Starfighter</description>
-		
+
     <long-description>
       Aeritalia F-104 Starfighter for the FlightGear Flight Simulator.
       The Aeritalia F-104S Starfighter was a licensed production Italian version
@@ -32,10 +32,10 @@
       <path>Models/F-104S.xml</path>
     </model>
 
-	<menubar>
+  <menubar>
       <default include="/gui/menu.xml"/>
-	</menubar>
-	  
+  </menubar>
+
   </sim>
-	
+
 </PropertyList>
