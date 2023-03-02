@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim>
+
+    <aircraft-version>2023-02-27-16</aircraft-version>
+
+    <authors>
+      <author n="0">
+        <name>RAF1</name>
+        <description>3D Model, Research</description>
+        <nick>RAF1</nick>
+      </author>
+
+      <author n="1">
+        <name>Megaf</name>
+        <description>Project Leader, Q/A, Graphics</description>
+        <nick>Megaf</nick>
+        <email>mmegaf@gmail.com</email>
+      </author>
+    </authors>
+
+    <minimum-fg-version>2020.3.17</minimum-fg-version>
+
+    <tags>
+      <tag n="0">Lockheed</tag>
+      <tag n="1">F-104</tag>
+      <tag n="2">Jet</tag>
+      <tag n="3">Fighter</tag>
+      <tag n="4">Turbojet</tag>
+      <tag n="5">Military</tag>
+    </tags>
+
+    <urls>
+      <home-page>https://forum.flightgear.org/viewtopic.php?f=4&amp;t=41282</home-page>
+      <support>https://github.com/Megaf/F-104/discussions/categories/support</support>
+      <wikipedia>https://en.wikipedia.org/wiki/Aeritalia_F-104S_Starfighter</wikipedia>
+      <code-repository>https://github.com/Megaf/F-104/</code-repository>
+    </urls>
+
+  </sim>
+
+  <input>
+    <keyboard include="/Input/keyboard.xml"/>
+  </input>
+
+  <nasal>
+    <tacview>
+      <file>Aircraft/F-104/Nasal/tacview.nas</file>
+    </tacview>
+  </nasal>
+
+</PropertyList>
