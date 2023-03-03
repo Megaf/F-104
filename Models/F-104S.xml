@@ -13,4 +13,28 @@
     <object-name>back-canopy-glass</object-name>
   </effect>
   
+  <animation>
+    <object-name>wingtip-tank-left</object-name>
+    <object-name>wingtip-tank-right</object-name>
+    <type>select</type>
+	<condition>
+	  <equals>
+	    <property>payload/ext-tanks/wingtip-tanks</property>
+	    <value>1</value>
+	  </equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>underwing-tank-left</object-name>
+    <object-name>underwing-tank-right</object-name>
+    <type>select</type>
+	<condition>
+	  <equals>
+	    <property>payload/ext-tanks/under-wing-tanks</property>
+	    <value>1</value>
+	  </equals>
+    </condition>
+  </animation>
+  
 </PropertyList>
