@@ -32,10 +32,18 @@
       <path>Models/F-104S.xml</path>
     </model>
 
-  <menubar>
+    <menubar>
       <default include="/gui/menu.xml"/>
-  </menubar>
+    </menubar>
 
+    <view n="0">
+      <name>Cockpit View</name>
+        <internal type="bool">true</internal>
+          <config>
+            <x-offset-m>  0    </x-offset-m>
+            <y-offset-m>  0.77 </y-offset-m>
+            <z-offset-m> -4.85  </z-offset-m>
+          </config>
+    </view>
   </sim>
-
 </PropertyList>
