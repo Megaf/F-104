@@ -45,5 +45,14 @@
             <z-offset-m> -4.85  </z-offset-m>
           </config>
     </view>
+	
   </sim>
+  
+  <payload>
+    <ext-tanks>
+	  <wingtip-tanks type="int">1</wingtip-tanks>
+	  <under-wing-tanks type="int">1</under-wing-tanks>
+	</ext-tanks>
+  </payload>
+  
 </PropertyList>
