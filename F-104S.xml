@@ -73,9 +73,12 @@
      <z>-4.25</z>
    </location>
    <location name="VRP" unit="IN">
-     <x>319.5</x>
+  <!--   <x>319.5</x>
      <y>0.0</y>
-     <z>-35.08</z>
+     <z>-35.08</z> -->
+	 <x>0</x>
+	 <y>0</y>
+	 <z>0</z>
    </location>
  </metrics>
 
@@ -116,10 +119,10 @@
  <ground_reactions>
 
   <contact type="BOGEY" name="NOSE">
-   <location unit="IN">
-     <x>213</x>
+   <location unit="M">
+     <x>-3.1513</x>
      <y>0.0</y>
-     <z>-132</z>
+     <z>-1.24678</z>
    </location>
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
@@ -132,10 +135,10 @@
  </contact>
 
   <contact type="BOGEY" name="LEFT_MAIN">
-   <location unit="IN">
-     <x>393.6</x>
-     <y>-63.20</y>
-     <z>-121</z>
+   <location unit="M">
+     <x>1.52432</x>
+     <y>-1.29002</y>
+     <z>-1.25014</z>
    </location>
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
@@ -148,10 +151,10 @@
  </contact>
 
   <contact type="BOGEY" name="RIGHT_MAIN">
-   <location unit="IN">
-     <x>393.6</x>
-     <y>63.20</y>
-     <z>-121</z>
+   <location unit="M">
+     <x>1.52432</x>
+     <y>1.29002</y>
+     <z>-1.25014</z>
    </location>
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
@@ -164,10 +167,10 @@
  </contact>
 
   <contact type="STRUCTURE" name="NOSE">
-    <location unit="IN">
-     <x>0</x>
-     <y>0</y>
-     <z>-43</z>
+    <location unit="M">
+     <x>-9.09673</x>
+     <y>-0.000016</y>
+     <z>-0.011405</z>
     </location>
     <static_friction>0.80</static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
@@ -176,10 +179,10 @@
  </contact>
 
   <contact type="STRUCTURE" name="TAIL">
-    <location unit="IN">
-     <x>656</x>
+    <location unit="M">
+     <x>7.31737</x>
      <y>0</y>
-     <z>-2.5</z>
+     <z>0.224119</z>
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
@@ -220,13 +223,13 @@
     <feed>1</feed>
     <feed>2</feed>
     <thruster file="direct">
-     <location unit="IN">
-       <x>622.05</x>
+     <location unit="M">
+       <x>7.32209</x>
        <y>0.00</y>
-       <z>-23.29</z>
+       <z>0.628679</z>
      </location>
      <orient unit="DEG">
-       <pitch>0.0</pitch>
+       <pitch>7.8</pitch>
        <roll>0.0</roll>
        <yaw>0.0</yaw>
      </orient>

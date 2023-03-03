@@ -1,5 +1,16 @@
 <?xml version="1.0"?>
 
 <PropertyList>
+
   <path>F-104S.ac</path>
+  
+  <effect>
+    <inherits-from>Aircraft/F-104/Models/Effects/ext-glass</inherits-from>
+    <object-name>left-front-canopy-glass</object-name>
+    <object-name>right-front-canopy-glass</object-name>
+    <object-name>center-front-canopy-glass</object-name>
+    <object-name>mid-canopy-glass</object-name>
+    <object-name>back-canopy-glass</object-name>
+  </effect>
+  
 </PropertyList>
