@@ -124,11 +124,11 @@
      <y>0.0</y>
      <z>-1.24678</z>
    </location>
-   <static_friction>  0.80 </static_friction>
+   <static_friction>  0.70 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="LBS/FT">       6723.00 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  2241.00 </damping_coeff>
+   <spring_coeff unit="LBS/FT"> 37500 </spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC"> 7500 </damping_coeff>
    <max_steer unit="DEG">60.00</max_steer>
    <brake_group>NONE</brake_group>
    <retractable>1</retractable>
@@ -136,15 +136,15 @@
 
   <contact type="BOGEY" name="LEFT_MAIN">
    <location unit="M">
-     <x>1.52432</x>
-     <y>-1.29002</y>
-     <z>-1.25014</z>
+     <x>2.01686</x>
+     <y>-3.27787</y>
+     <z>-0.232804</z>
    </location>
-   <static_friction>  0.80 </static_friction>
+   <static_friction>  0.70 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="LBS/FT">      22410.00 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  4482.00 </damping_coeff>
+   <spring_coeff unit="LBS/FT"> 37500 </spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC"> 7500 </damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>LEFT</brake_group>
    <retractable>1</retractable>
@@ -152,15 +152,15 @@
 
   <contact type="BOGEY" name="RIGHT_MAIN">
    <location unit="M">
-     <x>1.52432</x>
-     <y>1.29002</y>
-     <z>-1.25014</z>
+     <x>2.01686</x>
+     <y>3.27787</y>
+     <z>-0.232804</z>
    </location>
-   <static_friction>  0.80 </static_friction>
+   <static_friction>  0.70 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="LBS/FT">      22410.00 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  4482.00 </damping_coeff>
+   <spring_coeff unit="LBS/FT"> 37500 </spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC"> 7500 </damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>RIGHT</brake_group>
    <retractable>1</retractable>

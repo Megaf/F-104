@@ -37,4 +37,16 @@
     </condition>
   </animation>
   
+  <animation>
+    <type>spin</type>
+    <object-name>nosewhell-tyre</object-name>
+    <object-name>nosewhell-bolt</object-name>
+    <object-name>nosewhell-screws</object-name>
+    <property>/gear/gear/rollspeed-ms</property>
+    <factor>40</factor>
+    <axis>
+<object-name>nosewhell-axis</object-name>
+    </axis>
+  </animation>
+  
 </PropertyList>
