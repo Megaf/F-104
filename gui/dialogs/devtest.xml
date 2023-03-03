@@ -4,42 +4,108 @@
   <name>devtest</name>
   <modal>false</modal>
   <layout>vbox</layout>
-
   <empty><stretch>true</stretch></empty>
-
   <group>
     <layout>hbox</layout>
     <empty><stretch>true</stretch></empty>
-    <text><label>DevTest Dialog</label></text>
+    <group>
+      <layout>table</layout>
+      <text>
+        <visible><property>/engines/engine/cutoff</property></visible>
+        <row>0</row>
+        <col>0</col>
+        <label>Dev Panel</label>
+      </text>
+      <empty><stretch>true</stretch></empty>
+    </group>
     <empty><stretch>true</stretch></empty>
   </group>
+  
   <hrule/>
-
   <group>
-    <layout>table</layout>
-    <default-padding>10</default-padding>
-    <button>
-      <pref-width>90</pref-width>
-      <pref-height>30</pref-height>
-      <row>0</row>
-      <col>0</col>
-      <legend>NWS</legend>
-      <binding>
-        <command>property-toggle</command>
-        <property>/fdm/jsbsim/systems/NWS/engaged</property>
-        <value>0</value>
-        <value>1</value>
-      </binding>
-    </button>
+    <layout>hbox</layout>
+    <empty><stretch>true</stretch></empty>
+    <group>
+      <pref-width>256</pref-width>
+      <layout>table</layout>
+      <text>
+        <halign>left</halign>
+        <row>0</row>
+        <col>0</col>
+        <label>Engine N2 (RPM%):</label>
+      </text>
+      <text>
+        <halign>center</halign>
+        <row>0</row>
+        <col>1</col>
+        <format>%d</format>
+        <live>true</live>
+        <property>/engines/engine[0]/n2</property>
+      </text>
+      <text>
+        <halign>left</halign>
+        <row>1</row>
+        <col>0</col>
+        <label>Fuel Flow (PPH):</label>
+      </text>
+      <text>
+        <halign>center</halign>
+        <row>1</row>
+        <col>1</col>
+        <format>%d</format>
+        <live>true</live>
+        <property>/engines/engine[0]/fuel-flow_pph</property>
+      </text>
+      <text>
+        <halign>left</halign>
+        <row>2</row>
+        <col>0</col>
+        <label>Oil Pressure (PSI)</label>
+      </text>
+      <text>
+        <halign>center</halign>
+        <row>2</row>
+        <col>1</col>
+        <format>%d</format>
+        <live>true</live>
+        <property>/engines/engine[0]/oil-pressure-psi</property>
+      </text>
+      <text>
+        <halign>left</halign>
+        <row>3</row>
+        <col>0</col>
+        <label>Exhaust Temp (F)</label>
+      </text>
+      <text>
+        <halign>center</halign>
+        <row>3</row>
+        <col>1</col>
+        <format>%d</format>
+        <live>true</live>
+        <property>/engines/engine[0]/egt-degf</property>
+      </text>
+      <text>
+        <halign>left</halign>
+        <row>0</row>
+        <col>0</col>
+        <label>Engine N2 (RPM%)</label>
+      </text>
+      <text>
+        <halign>center</halign>
+        <row>0</row>
+        <col>1</col>
+        <format>%d</format>
+        <live>true</live>
+        <property>/engines/engine[0]/n2</property>
+      </text>
+      <empty><stretch>true</stretch></empty>
+    </group>
   </group>
-
   <hrule/>
   <group>
     <layout>table</layout>
     <default-padding>1</default-padding>
     <halign>fill</halign>
-
-    <!-- Close dialog button -->
     <button>
       <pref-width>90</pref-width>
       <pref-height>30</pref-height>
@@ -53,6 +119,6 @@
       </binding>
     </button>
   </group>
-<empty><stretch>true</stretch></empty>
+  <empty><stretch>true</stretch></empty>
 </PropertyList>
 
