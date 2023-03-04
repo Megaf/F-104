@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
-<flight_control name="FCS-roll">
+<flight_control name="FCS">
+
   <channel name="Pitch">
 
    <summer name="Pitch Trim Sum">
