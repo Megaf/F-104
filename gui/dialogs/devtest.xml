@@ -4,42 +4,189 @@
   <name>devtest</name>
   <modal>false</modal>
   <layout>vbox</layout>
-
   <empty><stretch>true</stretch></empty>
-
   <group>
     <layout>hbox</layout>
     <empty><stretch>true</stretch></empty>
-    <text><label>DevTest Dialog</label></text>
+    <group>
+      <layout>table</layout>
+      <text>
+        <row>0</row>
+        <col>0</col>
+        <label>Dev Panel</label>
+      </text>
+      <empty><stretch>true</stretch></empty>
+    </group>
     <empty><stretch>true</stretch></empty>
   </group>
+  
   <hrule/>
-
+  <group>
+    <layout>hbox</layout>
+    <empty><stretch>true</stretch></empty>
+    <group>
+      <layout>table</layout>
+      <default-padding>10</default-padding>
+      <button>
+        <pref-width>90</pref-width>
+        <pref-height>30</pref-height>
+        <row>0</row>
+        <col>0</col>
+        <legend>NWS</legend>
+        <binding>
+          <command>property-toggle</command>
+          <property>/fdm/jsbsim/systems/NWS/engaged</property>
+          <value>0</value>
+          <value>1</value>
+        </binding>
+      </button>
+    </group>
+    <group>
+      <pref-width>256</pref-width>
+      <default-padding>1</default-padding>
+      <layout>table</layout>
+      <text>
+        <halign>left</halign>
+        <row>0</row>
+        <col>0</col>
+        <label>Engine N2 (RPM%):</label>
+      </text>
+      <text>
+        <halign>center</halign>
+        <row>0</row>
+        <col>1</col>
+        <format>%d</format>
+        <live>true</live>
+        <property>/engines/engine[0]/n2</property>
+      </text>
+      <text>
+        <halign>left</halign>
+        <row>1</row>
+        <col>0</col>
+        <label>Fuel Flow (PPH):</label>
+      </text>
+      <text>
+        <halign>center</halign>
+        <row>1</row>
+        <col>1</col>
+        <format>%d</format>
+        <live>true</live>
+        <property>/engines/engine[0]/fuel-flow_pph</property>
+      </text>
+      <text>
+        <halign>left</halign>
+        <row>2</row>
+        <col>0</col>
+        <label>Oil Pressure (PSI)</label>
+      </text>
+      <text>
+        <halign>center</halign>
+        <row>2</row>
+        <col>1</col>
+        <format>%d</format>
+        <live>true</live>
+        <property>/engines/engine[0]/oil-pressure-psi</property>
+      </text>
+      <text>
+        <halign>left</halign>
+        <row>3</row>
+        <col>0</col>
+        <label>Exhaust Temp (F)</label>
+      </text>
+      <text>
+        <halign>center</halign>
+        <row>3</row>
+        <col>1</col>
+        <format>%d</format>
+        <live>true</live>
+        <property>/engines/engine[0]/egt-degf</property>
+      </text>
+      <empty><stretch>true</stretch></empty>
+    </group>
+  </group>
+  <hrule/>
   <group>
     <layout>table</layout>
-    <default-padding>10</default-padding>
+    <default-padding>50</default-padding>
+    <halign>fill</halign>
     <button>
+      <row>1</row>
+      <col>0</col>
+      <visible><property>/engines/engine/cutoff</property></visible>
       <pref-width>90</pref-width>
       <pref-height>30</pref-height>
-      <row>0</row>
-      <col>0</col>
-      <legend>NWS</legend>
+      <legend>CutOff ON</legend>
       <binding>
-        <command>property-toggle</command>
-        <property>/fdm/jsbsim/systems/NWS/engaged</property>
+        <command>property-assign</command>
+        <property>/controls/engines/engine/cutoff</property>
         <value>0</value>
+      </binding>
+    </button>
+    <button>
+      <row>1</row>
+      <col>0</col>
+      <visible><not><property>/engines/engine/cutoff</property></not></visible>
+      <pref-width>90</pref-width>
+      <pref-height>30</pref-height>
+      <legend>CutOff OFF</legend>
+      <binding>
+        <command>property-assign</command>
+        <property>/controls/engines/engine/cutoff</property>
         <value>1</value>
       </binding>
     </button>
-  </group>
-
+    <text><halign>center</halign><row>0</row><label>s = engine off | r = engine running</label></text>
+    <!-- TODO - Fix Sliders -->
+    <slider>
+      <!-- Slider when engine is off -->
+      <row>1</row>
+      <col>1</col>
+      <label>s</label>
+      <visible>
+        <less-than-equals>
+          <property>/fdm/jsbsim/propulsion/engine/n2</property>
+          <value>26</value>
+        </less-than-equals>
+      </visible>
+      <pref-width>90</pref-width>
+      <pref-height>30</pref-height>
+      <step>1</step>
+      <live>true</live>
+      <property>/controls/engines/engine[0]/starter</property>
+      <min>0</min>
+      <max>1</max>
+      <binding>
+        <command>property-assign</command>
+        <property>/controls/engines/engine[0]/starter</property>
+        <value>1</value>
+      </binding>
+    </slider>
+    <slider>
+      <!-- Slider when engine is running -->
+      <row>1</row>
+      <col>1</col>
+      <label>r</label>
+      <visible>
+        <greater-than-equals>
+          <property>/fdm/jsbsim/propulsion/engine/n2</property>
+          <value>26</value>
+        </greater-than-equals>
+      </visible>
+      <pref-width>90</pref-width>
+      <pref-height>30</pref-height>
+      <step>1</step>
+      <live>live</live>
+      <property>/controls/engines/engine[0]/starter</property>
+      <min>0</min>
+      <max>2</max>
+      <binding><command>dialog-apply</command></binding>
+    </slider>
+    </group>
   <hrule/>
   <group>
     <layout>table</layout>
     <default-padding>1</default-padding>
     <halign>fill</halign>
-
-    <!-- Close dialog button -->
     <button>
       <pref-width>90</pref-width>
       <pref-height>30</pref-height>
@@ -53,6 +200,6 @@
       </binding>
     </button>
   </group>
-<empty><stretch>true</stretch></empty>
+  <empty><stretch>true</stretch></empty>
 </PropertyList>
 
