@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <fx>
+    <engine>
+      <name>Engine running</name>
+      <path>Sounds/turbojet_fan.wav</path>
+      <property>/engines/engine[0]/n2</property>
+      <mode>looped</mode>
+      <pitch>
+        <property>/engines/engine[0]/n2</property>
+        <factor>0.02</factor>
+        <offset>-0.5</offset>
+      </pitch>
+    </engine>
+  </fx>
+</PropertyList>

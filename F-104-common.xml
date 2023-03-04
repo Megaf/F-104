@@ -39,6 +39,10 @@
       <code-repository>https://github.com/Megaf/F-104/</code-repository>
     </urls>
 
+  <sound>
+    <path>sound.xml</path>
+  </sound>
+
   </sim>
 
   <input>
