@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <system name="crash-detect">
-<!--
+
   <property value="0">systems/crash-detect/crashed</property>
 
   <channel name="Over-G">
@@ -59,5 +59,5 @@
     </switch>
 
   </channel>
--->
+
 </system>
