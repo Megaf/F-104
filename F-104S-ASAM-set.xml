@@ -4,16 +4,18 @@
 
   <sim>
 
-    <description>Aeritalia F-104S Starfighter</description>
+    <description>Aeritalia F-104S-ASA/M Starfighter</description>
 
     <long-description>
-      Aeritalia F-104 Starfighter for the FlightGear Flight Simulator.
+      Aeritalia F-104S-ASA/M Starfighter for the FlightGear Flight Simulator.
       The Aeritalia F-104S Starfighter was a licensed production Italian version
       of the Lockheed F-104 Starfighter, which served in the Italian Air Force, 
       and was its mainstay from the late 1960s until the beginning of the 
       21st century. The F-104S also served in the Turkish Air Force until 
       the mid-1990s. 
       The F-104S was the final development of the Starfighter line.
+
+      The ASA/M variant is an upgrade to the ASA variant with improved avionics.
     </long-description>
 
     <rating>
