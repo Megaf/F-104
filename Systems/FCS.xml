@@ -40,15 +40,6 @@
 
   <channel name="Roll">
 
-   <summer name="Roll Trim Sum">
-      <input>fcs/aileron-cmd-norm</input>
-      <input>fcs/roll-trim-cmd-norm</input>
-      <clipto>
-        <min> -1 </min>
-        <max>  1 </max>
-      </clipto>
-   </summer>
-
    <fcs_function name="Aileron Limit">
      <function>
        <table>
@@ -61,12 +52,18 @@
      </function>
      <output>fcs/aileron-limit-deg</output>
    </fcs_function>
-   
 
-<!--left aileron-->
+   <aerosurface_scale name="Roll Trim Degrees">
+      <input>fcs/roll-trim-cmd-norm</input>
+      <range>
+        <min> -5 </min>
+        <max>  5 </max>
+      </range>
+      <output>fcs/roll-trim-deg</output>
+   </aerosurface_scale>
 
-   <aerosurface_scale name="Left Aileron Control">
-      <input>fcs/roll-trim-sum</input>
+   <aerosurface_scale name="Roll Command Degrees">
+      <input>fcs/aileron-cmd-norm</input>
       <range>
         <min> -20 </min>
         <max>  20 </max>
@@ -75,9 +72,20 @@
         <min>-fcs/aileron-limit-deg</min>
         <max>fcs/aileron-limit-deg</max>
       </clipto>
-      <output>fcs/left-aileron-pos-deg</output>
+      <output>fcs/roll-cmd-deg</output>
    </aerosurface_scale>
 
+<!--left aileron-->
+
+   <summer name="Left Aileron Control">
+     <input>fcs/roll-trim-deg</input>
+     <input>fcs/roll-cmd-deg</input>
+     <clipto>
+       <min> -20 </min>
+       <max>  20 </max>
+     </clipto>
+     <output>fcs/left-aileron-pos-deg</output>
+   </summer>
 
    <aerosurface_scale name="Left Aileron Normalized">
       <input>fcs/left-aileron-pos-deg</input>
@@ -94,18 +102,15 @@
 
 <!--right aileron-->
 
-   <aerosurface_scale name="Right Aileron Control">
-      <input>fcs/roll-trim-sum</input>
-      <range>
-        <min> -20 </min>
-        <max>  20 </max>
-      </range>
-      <clipto>
-        <min>-fcs/aileron-limit-deg</min>
-        <max>fcs/aileron-limit-deg</max>
-      </clipto>
-      <output>fcs/right-aileron-pos-deg</output>
-   </aerosurface_scale>
+   <summer name="Right Aileron Control">
+     <input>fcs/roll-trim-deg</input>
+     <input>fcs/roll-cmd-deg</input>
+     <clipto>
+       <min> -20 </min>
+       <max>  20 </max>
+     </clipto>
+     <output>fcs/right-aileron-pos-deg</output>
+   </summer>
 
    <aerosurface_scale name="Right Aileron Normalized">
       <input>fcs/right-aileron-pos-deg</input>
