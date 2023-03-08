@@ -39,6 +39,8 @@
       <code-repository>https://github.com/Megaf/F-104/</code-repository>
     </urls>
 
+  <state include="States/cruise.xml"/>
+
   </sim>
 
   <input>
