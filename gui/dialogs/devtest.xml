@@ -25,6 +25,23 @@
     <layout>hbox</layout>
     <empty><stretch>true</stretch></empty>
     <group>
+      <layout>table</layout>
+      <default-padding>10</default-padding>
+      <button>
+        <pref-width>90</pref-width>
+        <pref-height>30</pref-height>
+        <row>0</row>
+        <col>0</col>
+        <legend>NWS</legend>
+        <binding>
+          <command>property-toggle</command>
+          <property>/fdm/jsbsim/systems/NWS/engaged</property>
+          <value>0</value>
+          <value>1</value>
+        </binding>
+      </button>
+    </group>
+    <group>
       <pref-width>256</pref-width>
       <default-padding>1</default-padding>
       <layout>table</layout>

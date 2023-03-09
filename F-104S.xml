@@ -276,7 +276,7 @@
  <system file="BLC"/>
  <system file="canopy"/>
  <system file="chute"/>
- <system file="crash-detect"/>
+ <!--<system file="crash-detect"/>-->
  <system file="FCS-pitch"/>
  <system file="FCS-roll"/>
  <system file="FCS-yaw"/>

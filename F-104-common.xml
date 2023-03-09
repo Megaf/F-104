@@ -39,9 +39,11 @@
       <code-repository>https://github.com/Megaf/F-104/</code-repository>
     </urls>
 
-  <sound>
-    <path>sound.xml</path>
-  </sound>
+    <sound>
+      <path>sound.xml</path>
+    </sound>
+
+    <state include="States/cruise.xml"/>
 
   </sim>
 

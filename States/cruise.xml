@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <name>cruise</name>
+  <readable-name>Cruising</readable-name>
+  <description>The aircraft is in the air, cruising</description>
+
+  <overlay>
+    <sim>
+      <presets>
+        <running type="bool">true</running>
+      </presets>
+    </sim>
+    <controls>
+      <gear>
+        <gear-down type="bool">false</gear-down>
+      </gear>
+    </controls>
+  </overlay>
+
+</PropertyList>
