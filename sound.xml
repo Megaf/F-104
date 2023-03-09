@@ -20,5 +20,19 @@
       <property>/engines/engine[0]/augmentation</property>
       <mode>looped</mode>
     </AB>
+
+   <gear>
+      <name>Gear movement</name>
+      <path>Sounds/gear.wav</path>
+      <property>/gear/gear[0]/position-norm</property>
+      <mode>in-transit</mode>
+    </gear>
+
+   <flaps>
+      <name>Flap movement</name>
+      <path>Sounds/flaps.wav</path>
+      <property>/surface-positions/flap-pos-norm</property>
+      <mode>in-transit</mode>
+    </flaps>
   </fx>
 </PropertyList>
