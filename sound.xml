@@ -13,5 +13,12 @@
         <offset>-0.5</offset>
       </pitch>
     </engine>
+
+    <AB>
+      <name>Afterburner</name>
+      <path>Sounds/jet.wav</path>
+      <property>/engines/engine[0]/augmentation</property>
+      <mode>looped</mode>
+    </AB>
   </fx>
 </PropertyList>
