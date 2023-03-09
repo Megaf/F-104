@@ -38,6 +38,10 @@
       <default include="/gui/menu.xml"/>
     </menubar>
 
+    <instrumentation>
+      <path>instrumentation.xml</path>
+    </instrumentation>
+
     <view n="0">
       <name>Cockpit View</name>
         <internal type="bool">true</internal>
