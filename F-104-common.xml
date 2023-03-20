@@ -5,6 +5,7 @@
   <sim>
 
     <aircraft-version>2023-02-27-16</aircraft-version>
+    <expected-aircraft-dir-name>F-104</expected-aircraft-dir-name>
 
     <authors>
       <author n="0">
