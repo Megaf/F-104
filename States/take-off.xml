@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <name>take-off</name>
+  <readable-name>Ready for takeoff</readable-name>
+  <description>The aircraft is on the runway, ready for taking off</description>
+
+  <overlay>
+    <sim>
+      <presets>
+        <running type="bool">true</running>
+      </presets>
+    </sim>
+    <controls>
+      <gear>
+        <brake-parking>1</brake-parking>
+      </gear>
+    </controls>
+  </overlay>
+
+</PropertyList>
