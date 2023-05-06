@@ -4,7 +4,7 @@
 
   <channel name="Pitch">
 
-    <summer name="Pitch Trim Sum">
+    <summer name="pitch-trim-sum">
       <input>fcs/elevator-cmd-norm</input>
       <input>fcs/pitch-trim-cmd-norm</input>
       <clipto>
@@ -13,35 +13,32 @@
       </clipto>
     </summer>
 
-    <aerosurface_scale name="Elevator Control">
+    <aerosurface_scale name="elevator-ctrl">
       <input>fcs/pitch-trim-sum</input>
       <range>
-        <min> -0.35 </min>
-        <max>  0.30 </max>
+        <min> -20 </min>
+        <max>  17 </max>
       </range>
-      <output>fcs/left-elevator-ctrl</output>
     </aerosurface_scale>
 
-    <actuator name="Elevator Actuator">
-      <input>fcs/left-elevator-ctrl</input>
+    <actuator name="elevator-pos-deg">
+      <input>fcs/elevator-ctrl</input>
       <clipto>
         <min> -20 </min>
-        <max>  20 </max>
+        <max>  17 </max>
       </clipto>
-      <output>fcs/elevator-pos-rad</output>
     </actuator>
 
-    <aerosurface_scale name="Elevator Normalized">
-      <input>fcs/elevator-pos-rad</input>
+    <aerosurface_scale name="elevator-pos-norm">
+      <input>fcs/elevator-pos-deg</input>
       <domain>
-        <min>-0.35</min>
-        <max> 0.30</max>
+        <min> -20 </min>
+        <max>  17 </max>
       </domain>
       <range>
         <min>-1</min>
         <max> 1</max>
       </range>
-      <output>fcs/elevator-pos-norm</output>
     </aerosurface_scale>
 
   </channel>
@@ -49,7 +46,7 @@
 
   <channel name="Roll">
 
-    <fcs_function name="Aileron Limit">
+    <fcs_function name="aileron-limit-deg">
       <function>
         <table>
           <independentVar>gear/gear-pos-norm</independentVar>
@@ -59,28 +56,25 @@
           </tableData>
         </table>
       </function>
-      <output>fcs/aileron-limit-deg</output>
     </fcs_function>
 
-    <aerosurface_scale name="Roll Trim Command Degrees">
+    <aerosurface_scale name="roll-trim-cmd-deg">
       <input>fcs/roll-trim-cmd-norm</input>
       <range>
         <min> -5 </min>
         <max>  5 </max>
       </range>
-      <output>fcs/roll-trim-cmd-deg</output>
     </aerosurface_scale>
 
-    <actuator name="Roll Trim Degrees">
+    <actuator name="roll-trim-deg">
       <input>fcs/roll-trim-cmd-deg</input>
       <clipto>
          <min> -5 </min>
          <max>  5 </max>
       </clipto>
-      <output>fcs/roll-trim-deg</output>
     </actuator>
 
-    <aerosurface_scale name="Roll Command Degrees">
+    <aerosurface_scale name="roll-cmd-deg">
       <input>fcs/aileron-cmd-norm</input>
       <range>
         <min> -20 </min>
@@ -90,31 +84,28 @@
         <min>-fcs/aileron-limit-deg</min>
         <max>fcs/aileron-limit-deg</max>
       </clipto>
-      <output>fcs/roll-cmd-deg</output>
     </aerosurface_scale>
 
   <!--left aileron-->
 
-    <actuator name="Left Aileron Actuator">
+    <actuator name="left-aileron-act">
       <input>fcs/roll-cmd-deg</input>
       <clipto>
         <min> -20 </min>
         <max>  20 </max>
       </clipto>
-      <output>fcs/left-aileron-act-deg</output>
     </actuator>
 
-    <summer name="Left Aileron Position">
+    <summer name="left-aileron-pos-deg">
       <input>fcs/roll-trim-deg</input>
-      <input>fcs/left-aileron-act-deg</input>
+      <input>fcs/left-aileron-act</input>
       <clipto>
         <min> -20 </min>
         <max>  20 </max>
       </clipto>
-      <output>fcs/left-aileron-pos-deg</output>
     </summer>
 
-    <aerosurface_scale name="Left Aileron Normalized">
+    <aerosurface_scale name="left-aileron-pos-norm">
       <input>fcs/left-aileron-pos-deg</input>
       <domain>
         <min> -20 </min>
@@ -124,31 +115,28 @@
         <min> -1 </min>
         <max>  1 </max>
       </range>
-      <output>fcs/left-aileron-pos-norm</output>
     </aerosurface_scale>
 
   <!--right aileron-->
 
-    <actuator name="Right Aileron Actuator">
+    <actuator name="right-aileron-act">
       <input>fcs/roll-cmd-deg</input>
       <clipto>
         <min> -20 </min>
         <max>  20 </max>
       </clipto>
-      <output>fcs/right-aileron-act-deg</output>
     </actuator>
 
-    <summer name="Right Aileron Position">
+    <summer name="right-aileron-pos-deg">
       <input>fcs/roll-trim-deg</input>
-      <input>fcs/right-aileron-act-deg</input>
+      <input>fcs/right-aileron-act</input>
       <clipto>
         <min> -20 </min>
         <max>  20 </max>
       </clipto>
-      <output>fcs/right-aileron-pos-deg</output>
     </summer>
 
-    <aerosurface_scale name="Right Aileron Normalized">
+    <aerosurface_scale name="right-aileron-pos-norm">
       <input>fcs/right-aileron-pos-deg</input>
       <domain>
         <min> -20 </min>
@@ -158,7 +146,6 @@
         <min> -1 </min>
         <max>  1 </max>
       </range>
-      <output>fcs/right-aileron-pos-norm</output>
     </aerosurface_scale>
 
   </channel>
