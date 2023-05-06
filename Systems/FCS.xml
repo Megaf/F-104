@@ -4,30 +4,46 @@
 
   <channel name="Pitch">
 
-    <summer name="pitch-trim-sum">
-      <input>fcs/elevator-cmd-norm</input>
+    <aerosurface_scale name="pitch-trim-cmd-deg">
       <input>fcs/pitch-trim-cmd-norm</input>
-      <clipto>
-        <min> -1 </min>
-        <max>  1 </max>
-      </clipto>
-    </summer>
+      <range>
+        <min> -5 </min>
+        <max>  4 </max>
+      </range>
+    </aerosurface_scale>
 
-    <aerosurface_scale name="elevator-ctrl">
-      <input>fcs/pitch-trim-sum</input>
+    <actuator name="pitch-trim-act">
+      <input>fcs/pitch-trim-cmd-deg</input>
+      <clipto>
+         <min> -5 </min>
+         <max>  4 </max>
+      </clipto>
+    </actuator>
+
+    <aerosurface_scale name="elevator-cmd-deg">
+      <input>fcs/elevator-cmd-norm</input>
       <range>
         <min> -20 </min>
         <max>  17 </max>
       </range>
     </aerosurface_scale>
 
-    <actuator name="elevator-pos-deg">
-      <input>fcs/elevator-ctrl</input>
+    <actuator name="elevator-act">
+      <input>fcs/elevator-cmd-deg</input>
       <clipto>
         <min> -20 </min>
         <max>  17 </max>
       </clipto>
     </actuator>
+
+    <summer name="elevator-pos-deg">
+      <input>fcs/pitch-trim-act</input>
+      <input>fcs/elevator-act</input>
+      <clipto>
+        <min> -20 </min>
+        <max>  17 </max>
+      </clipto>
+    </summer>
 
     <aerosurface_scale name="elevator-pos-norm">
       <input>fcs/elevator-pos-deg</input>
@@ -36,8 +52,8 @@
         <max>  17 </max>
       </domain>
       <range>
-        <min>-1</min>
-        <max> 1</max>
+        <min> -1 </min>
+        <max>  1 </max>
       </range>
     </aerosurface_scale>
 
@@ -66,7 +82,7 @@
       </range>
     </aerosurface_scale>
 
-    <actuator name="roll-trim-deg">
+    <actuator name="roll-trim-act">
       <input>fcs/roll-trim-cmd-deg</input>
       <clipto>
          <min> -5 </min>
@@ -97,7 +113,7 @@
     </actuator>
 
     <summer name="left-aileron-pos-deg">
-      <input>fcs/roll-trim-deg</input>
+      <input>fcs/roll-trim-act</input>
       <input>fcs/left-aileron-act</input>
       <clipto>
         <min> -20 </min>
@@ -128,7 +144,7 @@
     </actuator>
 
     <summer name="right-aileron-pos-deg">
-      <input>fcs/roll-trim-deg</input>
+      <input>fcs/roll-trim-act</input>
       <input>fcs/right-aileron-act</input>
       <clipto>
         <min> -20 </min>
