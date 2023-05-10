@@ -78,7 +78,7 @@
       </clipto>
     </actuator>
 
-    <aerosurface_scale name="roll-cmd-unlimited-deg">
+    <aerosurface_scale name="aileron-cmd-unlimited-deg">
       <input>fcs/aileron-cmd-norm</input>
       <range>
         <min> -20 </min>
@@ -86,8 +86,8 @@
       </range>
     </aerosurface_scale>
 
-    <scheduled_gain name="roll-cmd-deg">
-      <input>fcs/roll-cmd-unlimited-deg</input>
+    <scheduled_gain name="aileron-cmd-deg">
+      <input>fcs/aileron-cmd-unlimited-deg</input>
       <table>
         <independentVar>gear/gear-pos-norm</independentVar>
         <tableData>
@@ -100,7 +100,7 @@
   <!--left aileron-->
 
     <actuator name="left-aileron-act">
-      <input>fcs/roll-cmd-deg</input>
+      <input>fcs/aileron-cmd-deg</input>
       <clipto>
         <min> -20 </min>
         <max>  20 </max>
@@ -131,7 +131,7 @@
   <!--right aileron-->
 
     <actuator name="right-aileron-act">
-      <input>fcs/roll-cmd-deg</input>
+      <input>fcs/aileron-cmd-deg</input>
       <clipto>
         <min> -20 </min>
         <max>  20 </max>
