@@ -2,19 +2,33 @@
 
 <PropertyList>
 
+  <!-- AN/ARC-150 -->
   <comm-radio>
     <name>comm</name>
     <number>0</number>
   </comm-radio>
 
+  <!-- SIT-301 -->
   <comm-radio>
     <name>comm</name>
     <number>1</number>
   </comm-radio>
 
+  <!-- TACAN -->
   <tacan>
     <name>tacan</name>
     <number>0</number>
   </tacan>
   
+  <!-- Temporary transponder -->
+  <transponder/>
+
+  <!-- C-2G -->
+  <heading-indicator-dg>
+
+  </heading-indicator-dg>
+  <magnetic-compass>
+
+  </magnetic-compass>
+
 </PropertyList>
