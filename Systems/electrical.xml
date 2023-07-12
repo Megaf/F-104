@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+
+<!-- Simple on/off electrical system -->
+
+<system name="electrical">
+  <property value="1">systems/electrical/bat-1-serviceable</property>
+  <property value="1">systems/electrical/bat-2-serviceable</property>
+  <property value="1">systems/electrical/GEN-1-switch</property>
+  <property value="1">systems/electrical/GEN-2-switch</property>
+  <property value="1">systems/electrical/GEN-3-switch</property>
+  <property value="0">systems/electrical/RAT-extended</property>
+
+  <channel name="AC">
+
+    <!-- AC GENERATORS -->
+
+    <!-- No. 1 wild frequency generator -->
+    <switch name="systems/electrical/GEN-1-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/GEN-1-switch == 1
+      </test>
+    </switch>
+
+    <!-- No. 2 wild frequency generator -->
+    <switch name="systems/electrical/GEN-2-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/GEN-2-switch == 1
+      </test>
+    </switch>
+
+    <!-- Fixed-frequency generator -->
+    <switch name="systems/electrical/GEN-3-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/GEN-3-switch == 1
+      </test>
+    </switch>
+
+    <!-- RAT -->
+    <switch name="systems/electrical/RAT-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/RAT-extended == 1
+      </test>
+    </switch>
+
+    <!-- AC BUSES -->
+
+    <!-- No. 1 primary AC bus -->
+    <switch name="systems/electrical/XP1-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/GEN-1-powered == 1
+        systems/electrical/GEN-2-powered == 1
+      </test>
+    </switch>
+
+    <!-- No. 2 primary AC bus -->
+    <switch name="systems/electrical/XP2-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/GEN-2-powered == 1
+        systems/electrical/GEN-1-powered == 1
+      </test>
+    </switch>
+
+    <!-- No. 1 secondary AC bus -->
+    <switch name="systems/electrical/XP3-powered">
+      <default value="0"/>
+      <test value="1" logic="AND">
+        systems/electrical/GEN-1-powered == 1
+        systems/electrical/GEN-2-powered == 1
+      </test>
+    </switch>
+
+    <!-- Emergency AC bus -->
+    <switch name="systems/electrical/XP4-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/GEN-2-powered == 1
+        systems/electrical/GEN-1-powered == 1
+        systems/electrical/RAT-powered == 1
+      </test>
+    </switch>
+
+    <!-- Primary fixed-frequency bus -->
+    <switch name="systems/electrical/XP5-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/GEN-3-powered == 1
+        systems/electrical/XP4-powered == 1
+      </test>
+    </switch>
+
+    <!-- Instrument bus -->
+    <switch name="systems/electrical/XP6-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/XP5-powered == 1
+      </test>
+    </switch>
+
+    <!-- Secondary fixed-frequency bus -->
+    <switch name="systems/electrical/XP7-powered">
+      <default value="0"/>
+      <test value="1" logic="AND">
+        <test logic="OR">
+          systems/electrical/GEN-3-powered == 1
+          systems/electrical/XP4-powered == 1
+        </test>
+        <test logic="OR">
+          systems/electrical/GEN-1-powered == 1
+          systems/electrical/GEN-2-powered == 1
+        </test>
+      </test>
+    </switch>
+
+  </channel>
+
+
+  <channel name="DC">
+
+    <!-- TRANSFORMER RECTIFIER UNITS -->
+
+    <!-- Transformer rectifier unit 1 -->
+    <switch name="systems/electrical/TRU-1-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/XP2-powered == 1
+      </test>
+    </switch>
+
+    <!-- Transformer rectifier unit 2 -->
+    <switch name="systems/electrical/TRU-2-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/XP4-powered == 1
+      </test>
+    </switch>
+
+    <!-- DC BUSES -->
+
+    <!-- Primary DC bus -->
+    <switch name="systems/electrical/PP1-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/TRU-1-powered == 1
+      </test>
+    </switch>
+
+    <!-- No. 1 emergency DC bus -->
+    <switch name="systems/electrical/PP2-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/PP1-powered == 1
+        systems/electrical/TRU-2-powered == 1
+      </test>
+    </switch>
+
+    <!-- No. 2 emergency DC bus -->
+    <switch name="systems/electrical/PP3-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/PP1-powered == 1
+        systems/electrical/TRU-2-powered == 1
+      </test>
+    </switch>
+
+    <!-- No. 1 battery bus -->
+    <switch name="systems/electrical/PP4-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/TRU-2-powered == 1
+        systems/electrical/bat-1-serviceable == 1
+      </test>
+    </switch>
+
+    <!-- No. 2 battery bus -->
+    <switch name="systems/electrical/PP5-powered">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/TRU-2-powered == 1
+        systems/electrical/bat-2-serviceable == 1
+      </test>
+    </switch>
+
+  </channel>
+
+
+</system>

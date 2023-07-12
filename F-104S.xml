@@ -286,6 +286,7 @@
  <!--<system file="radar"/>-->
  <system file="speedbrakes"/>
  <system file="tailhook"/>
+ <system file="electrical"/>
 
  <flight_control name="FCS"></flight_control>
 
