@@ -13,6 +13,14 @@
     </item>
 
     <item>
+      <label>Electrical system</label>
+      <binding>
+        <command>dialog-show</command>
+        <dialog-name>electrical</dialog-name>
+      </binding>
+    </item>
+
+    <item>
       <label>TacView Control</label>
       <binding>
         <command>dialog-show</command>
