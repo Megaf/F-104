@@ -5,9 +5,9 @@
 <system name="electrical">
   <property value="1">systems/electrical/bat-1-serviceable</property>
   <property value="1">systems/electrical/bat-2-serviceable</property>
-  <property value="1">systems/electrical/GEN-1-switch</property>
-  <property value="1">systems/electrical/GEN-2-switch</property>
-  <property value="1">systems/electrical/GEN-3-switch</property>
+  <property value="0">systems/electrical/GEN-1-switch</property>
+  <property value="0">systems/electrical/GEN-2-switch</property>
+  <property value="0">systems/electrical/GEN-3-switch</property>
   <property value="0">systems/electrical/RAT-extended</property>
 
   <channel name="AC">
