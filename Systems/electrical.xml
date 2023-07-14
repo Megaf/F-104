@@ -15,7 +15,7 @@
     <!-- AC GENERATORS -->
 
     <!-- No. 1 wild frequency generator -->
-    <switch name="systems/electrical/GEN-1-powered">
+    <switch name="systems/electrical/GEN-1-output">
       <default value="0"/>
       <test value="1" logic="OR">
         systems/electrical/GEN-1-switch == 1
@@ -23,7 +23,7 @@
     </switch>
 
     <!-- No. 2 wild frequency generator -->
-    <switch name="systems/electrical/GEN-2-powered">
+    <switch name="systems/electrical/GEN-2-output">
       <default value="0"/>
       <test value="1" logic="OR">
         systems/electrical/GEN-2-switch == 1
@@ -31,7 +31,7 @@
     </switch>
 
     <!-- Fixed-frequency generator -->
-    <switch name="systems/electrical/GEN-3-powered">
+    <switch name="systems/electrical/GEN-3-output">
       <default value="0"/>
       <test value="1" logic="OR">
         systems/electrical/GEN-3-switch == 1
@@ -39,7 +39,7 @@
     </switch>
 
     <!-- RAT -->
-    <switch name="systems/electrical/RAT-powered">
+    <switch name="systems/electrical/RAT-output">
       <default value="0"/>
       <test value="1" logic="OR">
         systems/electrical/RAT-extended == 1
@@ -52,8 +52,8 @@
     <switch name="systems/electrical/XP1-powered">
       <default value="0"/>
       <test value="1" logic="OR">
-        systems/electrical/GEN-1-powered == 1
-        systems/electrical/GEN-2-powered == 1
+        systems/electrical/GEN-1-output == 1
+        systems/electrical/GEN-2-output == 1
       </test>
     </switch>
 
@@ -61,8 +61,8 @@
     <switch name="systems/electrical/XP2-powered">
       <default value="0"/>
       <test value="1" logic="OR">
-        systems/electrical/GEN-2-powered == 1
-        systems/electrical/GEN-1-powered == 1
+        systems/electrical/GEN-2-output == 1
+        systems/electrical/GEN-1-output == 1
       </test>
     </switch>
 
@@ -70,8 +70,8 @@
     <switch name="systems/electrical/XP3-powered">
       <default value="0"/>
       <test value="1" logic="AND">
-        systems/electrical/GEN-1-powered == 1
-        systems/electrical/GEN-2-powered == 1
+        systems/electrical/GEN-1-output == 1
+        systems/electrical/GEN-2-output == 1
       </test>
     </switch>
 
@@ -79,9 +79,9 @@
     <switch name="systems/electrical/XP4-powered">
       <default value="0"/>
       <test value="1" logic="OR">
-        systems/electrical/GEN-2-powered == 1
-        systems/electrical/GEN-1-powered == 1
-        systems/electrical/RAT-powered == 1
+        systems/electrical/GEN-2-output == 1
+        systems/electrical/GEN-1-output == 1
+        systems/electrical/RAT-output == 1
       </test>
     </switch>
 
@@ -89,7 +89,7 @@
     <switch name="systems/electrical/XP5-powered">
       <default value="0"/>
       <test value="1" logic="OR">
-        systems/electrical/GEN-3-powered == 1
+        systems/electrical/GEN-3-output == 1
         systems/electrical/XP4-powered == 1
       </test>
     </switch>
@@ -107,12 +107,12 @@
       <default value="0"/>
       <test value="1" logic="AND">
         <test logic="OR">
-          systems/electrical/GEN-3-powered == 1
+          systems/electrical/GEN-3-output == 1
           systems/electrical/XP4-powered == 1
         </test>
         <test logic="OR">
-          systems/electrical/GEN-1-powered == 1
-          systems/electrical/GEN-2-powered == 1
+          systems/electrical/GEN-1-output == 1
+          systems/electrical/GEN-2-output == 1
         </test>
       </test>
     </switch>

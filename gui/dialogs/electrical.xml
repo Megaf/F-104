@@ -23,21 +23,21 @@
 
     <text>
       <visible>
-        <not><property>/fdm/jsbsim/systems/electrical/GEN-3-powered</property></not>
+        <not><property>/fdm/jsbsim/systems/electrical/GEN-3-output</property></not>
       </visible>
       <label>FIXED FREQ OUT</label>
     </text>
     <vrule/>
     <text>
       <visible>
-        <not><property>/fdm/jsbsim/systems/electrical/GEN-1-powered</property></not>
+        <not><property>/fdm/jsbsim/systems/electrical/GEN-1-output</property></not>
       </visible>
       <label>GENERATOR No. 1 OUT</label>
     </text>
     <vrule/>
     <text>
       <visible>
-        <not><property>/fdm/jsbsim/systems/electrical/GEN-2-powered</property></not>
+        <not><property>/fdm/jsbsim/systems/electrical/GEN-2-output</property></not>
       </visible>
       <label>GENERATOR No. 2 OUT</label>
     </text>
