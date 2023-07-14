@@ -91,9 +91,12 @@
       <col>2</col>
       <legend>FIXED FREQ RESET</legend>
       <binding>
-        <command>property-assign</command>
-        <property>/fdm/jsbsim/systems/electrical/GEN-3-switch</property>
-        <value>1</value>
+        <command>nasal</command>
+        <script>
+          # Maybe there is a better way to do this? IDK
+          setprop("/fdm/jsbsim/systems/electrical/GEN-3-reset", 1);
+          settimer(func setprop("/fdm/jsbsim/systems/electrical/GEN-3-reset", 0), 1);
+        </script>
       </binding>
     </button>
 

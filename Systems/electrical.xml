@@ -7,7 +7,7 @@
   <property value="1">systems/electrical/bat-2-serviceable</property>
   <property value="0">systems/electrical/GEN-1-switch</property>
   <property value="0">systems/electrical/GEN-2-switch</property>
-  <property value="0">systems/electrical/GEN-3-switch</property>
+  <property value="0">systems/electrical/GEN-3-reset</property>
   <property value="0">systems/electrical/RAT-extended</property>
 
   <channel name="AC">
@@ -57,10 +57,23 @@
     </switch>
 
     <!-- Fixed-frequency generator -->
+
+    <switch name="systems/electrical/GEN-3-tripped">
+      <default value="systems/electrical/GEN-3-tripped"/>
+      <test value="0" logic="AND">
+        systems/electrical/GEN-3-reset == 1
+        <!-- Change this once we get an engine with proper idle RPM -->
+        propulsion/engine/n2 gt 50
+      </test>
+      <test value="1" logic="OR">
+        propulsion/engine/n2 lt 20
+      </test>
+    </switch>
+
     <switch name="systems/electrical/GEN-3-output">
       <default value="0"/>
       <test value="1" logic="OR">
-        systems/electrical/GEN-3-switch == 1
+        systems/electrical/GEN-3-tripped == 0-
       </test>
     </switch>
 
