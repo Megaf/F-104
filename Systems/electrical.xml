@@ -15,17 +15,43 @@
     <!-- AC GENERATORS -->
 
     <!-- No. 1 wild frequency generator -->
+
+    <switch name="systems/electrical/GEN-1-tripped">
+      <default value="systems/electrical/GEN-1-tripped"/>
+      <test value="0" logic="OR">
+        systems/electrical/GEN-1-switch == 0
+      </test>
+      <test value="1" logic="OR">
+        <!-- Change this once we get an engine with proper idle RPM -->
+        propulsion/engine/n2 lt 50
+      </test>
+    </switch>
+
     <switch name="systems/electrical/GEN-1-output">
       <default value="0"/>
-      <test value="1" logic="OR">
+      <test value="1" logic="AND">
+        systems/electrical/GEN-1-tripped == 0
         systems/electrical/GEN-1-switch == 1
       </test>
     </switch>
 
     <!-- No. 2 wild frequency generator -->
+
+    <switch name="systems/electrical/GEN-2-tripped">
+      <default value="systems/electrical/GEN-2-tripped"/>
+      <test value="0" logic="OR">
+        systems/electrical/GEN-2-switch == 0
+      </test>
+      <test value="1" logic="OR">
+        <!-- Change this once we get an engine with proper idle RPM -->
+        propulsion/engine/n2 lt 50
+      </test>
+    </switch>
+
     <switch name="systems/electrical/GEN-2-output">
       <default value="0"/>
-      <test value="1" logic="OR">
+      <test value="1" logic="AND">
+        systems/electrical/GEN-2-tripped == 0
         systems/electrical/GEN-2-switch == 1
       </test>
     </switch>
