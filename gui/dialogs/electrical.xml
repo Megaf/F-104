@@ -132,6 +132,11 @@
       <row>1</row>
       <col>2</col>
       <legend>RAM AIR TURBINE</legend>
+      <color>
+        <red>0.7</red>
+        <green>0.5</green>
+        <blue>0.0</blue>
+      </color>
       <enable>
         <not><property>/fdm/jsbsim/systems/electrical/RAT-extended</property></not>
       </enable>
