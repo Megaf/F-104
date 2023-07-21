@@ -228,4 +228,34 @@
   </channel>
 
 
+  <!-- Determines if instruments have power -->
+  <channel name="instruments">
+
+    <switch name="systems/electrical/instruments/comm-0">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/PP2-powered == 1
+        systems/electrical/PP5-powered == 1
+      </test>
+    </switch>
+
+    <switch name="systems/electrical/instruments/comm-1">
+      <default value="0"/>
+      <test value="1" logic="OR">
+        systems/electrical/PP4-powered == 1
+      </test>
+    </switch>
+
+    <switch name="systems/electrical/instruments/tacan">
+      <default value="0"/>
+      <test value="1" logic="AND">
+        systems/electrical/PP1-powered == 1
+        systems/electrical/XP6-powered == 1
+      </test>
+      <!-- FG TACAN has a fixed electrical property :( -->
+      <output>/systems/electrical/outputs/tacan</output>
+    </switch>
+
+  </channel>
+
 </system>

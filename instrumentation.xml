@@ -6,18 +6,21 @@
   <comm-radio>
     <name>comm</name>
     <number>0</number>
+    <power-supply>/fdm/jsbsim/systems/electrical/instruments/comm-0</power-supply>
   </comm-radio>
 
   <!-- SIT-301 -->
   <comm-radio>
     <name>comm</name>
     <number>1</number>
+    <power-supply>/fdm/jsbsim/systems/electrical/instruments/comm-1</power-supply>
   </comm-radio>
 
   <!-- TACAN -->
   <tacan>
     <name>tacan</name>
     <number>0</number>
+    <!-- TACAN does not support custom power supply node yet -->
   </tacan>
   
   <!-- Temporary transponder -->
