@@ -5,4 +5,4 @@ Lockheed F-104 Starfighter for the FlightGear Flight Simulator
 Join us on Discord! https://discord.gg/qGhUmSEH2v
 
 # License
-GPL 2
+GNU General Public License v2.0 (check the [https://github.com/Megaf/F-104/blob/main/LICENSE.md](LICENSE.md))
