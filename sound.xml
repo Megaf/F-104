@@ -21,6 +21,18 @@
       <mode>looped</mode>
     </AB>
 
+    <starter>
+      <name>Starter</name>
+      <path>Sounds/starter_loop.wav</path>
+      <property>/engines/engine[0]/starter</property>
+      <mode>looped</mode>
+      <pitch>
+        <property>/engines/engine[0]/n2</property>
+        <factor>0.02</factor>
+        <offset>0</offset>
+      </pitch>
+    </starter>
+
     <gear>
       <name>Gear movement</name>
       <path>Sounds/gear.wav</path>
