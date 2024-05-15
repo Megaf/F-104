@@ -5,9 +5,15 @@
 <system name="electrical">
   <property value="1">systems/electrical/bat-1-serviceable</property>
   <property value="1">systems/electrical/bat-2-serviceable</property>
+  <property value="1">systems/electrical/GEN-1-serviceable</property>
+  <property value="1">systems/electrical/GEN-2-serviceable</property>
+  <property value="1">systems/electrical/GEN-3-serviceable</property>
+
   <property value="0">systems/electrical/GEN-1-switch</property>
   <property value="0">systems/electrical/GEN-2-switch</property>
+
   <property value="0">systems/electrical/GEN-3-reset</property>
+
 
   <channel name="AC">
 
@@ -21,7 +27,7 @@
         systems/electrical/GEN-1-switch == 0
       </test>
       <test value="1" logic="OR">
-        <!-- Change this once we get an engine with proper idle RPM -->
+        <!-- TODO: Change this once we get an engine with proper idle RPM -->
         propulsion/engine/n2 lt 50
       </test>
     </switch>
@@ -29,6 +35,7 @@
     <switch name="systems/electrical/GEN-1-output">
       <default value="0"/>
       <test value="1" logic="AND">
+        systems/electrical/GEN-1-serviceable == 1
         systems/electrical/GEN-1-tripped == 0
         systems/electrical/GEN-1-switch == 1
       </test>
@@ -42,7 +49,7 @@
         systems/electrical/GEN-2-switch == 0
       </test>
       <test value="1" logic="OR">
-        <!-- Change this once we get an engine with proper idle RPM -->
+        <!-- TODO: Change this once we get an engine with proper idle RPM -->
         propulsion/engine/n2 lt 50
       </test>
     </switch>
@@ -50,18 +57,20 @@
     <switch name="systems/electrical/GEN-2-output">
       <default value="0"/>
       <test value="1" logic="AND">
+        systems/electrical/GEN-2-serviceable == 1
         systems/electrical/GEN-2-tripped == 0
         systems/electrical/GEN-2-switch == 1
       </test>
     </switch>
 
     <!-- Fixed-frequency generator -->
+    <!-- TODO: Make resetting this require a 5 second press -->
 
     <switch name="systems/electrical/GEN-3-tripped">
       <default value="systems/electrical/GEN-3-tripped"/>
       <test value="0" logic="AND">
         systems/electrical/GEN-3-reset == 1
-        <!-- Change this once we get an engine with proper idle RPM -->
+        <!-- TODO: Change this once we get an engine with proper idle RPM -->
         propulsion/engine/n2 gt 50
       </test>
       <test value="1" logic="OR">
@@ -71,8 +80,9 @@
 
     <switch name="systems/electrical/GEN-3-output">
       <default value="0"/>
-      <test value="1" logic="OR">
-        systems/electrical/GEN-3-tripped == 0-
+      <test value="1" logic="AND">
+        systems/electrical/GEN-3-serviceable == 1
+        systems/electrical/GEN-3-tripped == 0
       </test>
     </switch>
 
