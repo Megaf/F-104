@@ -8,7 +8,6 @@
   <property value="0">systems/electrical/GEN-1-switch</property>
   <property value="0">systems/electrical/GEN-2-switch</property>
   <property value="0">systems/electrical/GEN-3-reset</property>
-  <property value="0">systems/electrical/RAT-extended</property>
 
   <channel name="AC">
 
@@ -81,7 +80,7 @@
     <switch name="systems/electrical/RAT-output">
       <default value="0"/>
       <test value="1" logic="OR">
-        systems/electrical/RAT-extended == 1
+        systems/RAT/RAT-extended == 1
       </test>
     </switch>
 

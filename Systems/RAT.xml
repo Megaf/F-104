@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<!-- RAM air turbine state -->
+<system name="rat">
+  <property value="0">systems/RAT/RAT-extended</property>
+</system>

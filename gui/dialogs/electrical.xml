@@ -138,11 +138,11 @@
         <blue>0.0</blue>
       </color>
       <enable>
-        <not><property>/fdm/jsbsim/systems/electrical/RAT-extended</property></not>
+        <not><property>/fdm/jsbsim/systems/RAT/RAT-extended</property></not>
       </enable>
       <binding>
         <command>property-assign</command>
-        <property>/fdm/jsbsim/systems/electrical/RAT-extended</property>
+        <property>/fdm/jsbsim/systems/RAT/RAT-extended</property>
         <value>1</value>
       </binding>
     </button>
